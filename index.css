@@ -1,0 +1,111 @@
+.switcher
+{
+    display: inline-block;
+    position: relative;
+}
+
+.switcher__input
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+}
+
+.switcher__border
+{
+    position: relative;
+    display: block;
+
+    box-sizing: border-box;
+
+    width: 142px;
+    height: 75px;
+
+    background: linear-gradient(180deg, #F4F4F4 0%, #EBEBEB 3.89%, #E9E9E9 6.73%, #E1E1E1 9.69%, #DBDBDB 88.64%, #DDDDDD 92.5%, #D8D8D8 96.36%, #D1D1D1 100%);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 0px 14px #ADADAD;
+    border-radius: 40px;
+
+    padding: 8px;
+}
+
+.switcher__body
+{
+    background: #655466;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+}
+
+.switcher__input:checked + .switcher__border .switcher__body
+{
+    background: #A220C3;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.switcher__button
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #FFFFFF;
+    box-shadow: -4px 4px 4px #949494, inset 0px -6px 9px #949494;
+}
+
+.switcher__input:checked + .switcher__border .switcher__button
+{
+    left: calc(100% - 70px);
+    /* left: auto; */
+    /* right: 0; */
+}
+
+.switcher__button-body
+{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 9px;
+
+    background: #E4E4E4;
+    background-blend-mode: hue;
+    box-shadow: inset 3px 3px 9px rgba(87, 87, 87, 0.25);
+
+    border-radius: 50%;
+}
+
+.switcher__button-image
+{
+    width: 22px;
+    height: 24px;
+    fill: none;
+    stroke: #655466;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.switcher__input:checked + .switcher__border .switcher__button-image
+{
+    stroke: #CC00FF;
+}
+
+.switcher__input:focus + .switcher__border
+{
+    box-shadow: 0 0 3px 0 green;
+}
